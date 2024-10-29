@@ -6,12 +6,10 @@ import Footer from '../FooterEnd/FooterEnd';
 
 export default function AboutUs() {
 
-  // Scroll to the top on component load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-// export default function AboutUs(){
     return(
         <div className="AboutusBody">
 <br></br>
