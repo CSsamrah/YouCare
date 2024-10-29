@@ -11,10 +11,11 @@ export default function Faqs() {
             <br />
             <br />
             <br />
-            <div className='image-container'>
+            {/* <div className='image-container'>
                 <img src={image6} alt='Glow' className='full-width-image' />
-            </div>
+            </div> */}
             <br />
+            <h1>FAQ</h1>
             <p>
                 Do you have a question about your skin type, a certain product, or an ingredient?
                 Don't worry! We put together a Skincare FAQ from all the questions that you guys asked.
@@ -183,7 +184,7 @@ export default function Faqs() {
             <br></br>
             <p>Love,</p>
             <br></br>
-            <p>Glow Quester 💝</p>
+            <p>YouCare 💝</p>
             <br></br>
             <br></br>
             <Footer />

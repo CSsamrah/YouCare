@@ -1,43 +1,67 @@
 import React, { useState } from 'react';
-import './TrackOrder.css'
-import Footer from '../FooterEnd/FooterEnd'
-import image3 from '../images/Glow quester (1).png'
+import './TrackOrder.css';
+import Footer from '../FooterEnd/FooterEnd';
+import image3 from '../images/Glow quester (1).png';
 
 export default function TrackOrder() {
   const [trackingNumber, setTrackingNumber] = useState('');
   const [trackingResult, setTrackingResult] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const doTrack = () => {
     if (trackingNumber.trim() === '') {
-      alert('Enter your tracking number.');
+      alert('Please enter your tracking number.');
       return;
     }
-
-    setTrackingResult(`Tracking result for ${trackingNumber}`);
+    
+    setLoading(true);
+    setTimeout(() => {
+      setTrackingResult(`Tracking result for ${trackingNumber}`);
+      setLoading(false);
+    }, 1500); // Simulate tracking delay
   };
 
   return (
-    <div className='body'>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div className='image-container'>
-        <img src={image3} alt='Glow' className='full-width-image'></img>
-      </div>
+    <div className='track-order-body'>
       <br></br>
       <br></br>
-      <p>Please enter your tracking number below. If your tracking number doesn't work, feel free to contact us at support@yourstorename.com.</p>
-      <div className='input-container'>
-        <input type="text" value={trackingNumber} onChange={(e) => setTrackingNumber(e.target.value)} maxLength="50" />
-        <input type="button" value="TRACK" onClick={doTrack} />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      {/* <div className='hero-section'>
+        <img src={image3} alt='Glow' className='hero-image' />
+      </div> */}
+
+      <div className='content'>
+        <h1>Track Your Order</h1>
+        <p className='instructions'>
+          Enter your tracking number below to get the latest update on your order. 
+          If you experience issues, reach out to us at <a href="mailto:support@yourstorename.com">support@yourstorename.com</a>.
+        </p>
+        
+        <div className='input-container'>
+          <input 
+            type="text" 
+            placeholder="Enter tracking number" 
+            value={trackingNumber} 
+            onChange={(e) => setTrackingNumber(e.target.value)} 
+            maxLength="50" 
+            className='tracking-input'
+          />
+          <button onClick={doTrack} className='track-button'>
+            {loading ? 'Tracking...' : 'TRACK'}
+          </button>
+        </div>
+        
+        <div className='tracking-result'>
+          {trackingResult && <p>{trackingResult}</p>}
+        </div>
       </div>
-      <div className='tracking-result'>
-        {trackingResult && <p>{trackingResult}</p>} <br></br>
-      </div>
-      <Footer/>
+      
+      <Footer />
     </div>
   );
 }
+
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../FooterEnd/FooterEnd'
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -61,6 +62,7 @@ const SignUp = () => {
         </div>
         <button type="submit">Sign Up</button>
       </form>
+      <Footer/>
     </div>
   );
 };
