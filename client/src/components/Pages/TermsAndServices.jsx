@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, {useEffect} from 'react';
 import './TermsAndServices.css';
+=======
+import React from 'react';
+import './Faqs.css';
+>>>>>>> 7759219 (Footer Changes)
 import image3 from '../images/Glow quester (1).png';
 import Footer from '../FooterEnd/FooterEnd';
 
