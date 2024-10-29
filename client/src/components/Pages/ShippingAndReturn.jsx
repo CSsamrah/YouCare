@@ -1,48 +1,63 @@
 import React from "react";
-import Footer from '../FooterEnd/FooterEnd'
-import image7 from '../images/Shipping (2).png'
-import '../App.css'
+import Navbar from '../Navbar/Navbar';
+import Footer from '../FooterEnd/FooterEnd';
+import standardIcon from '../images/standard.png';
+import expressIcon from '../images/express.png';
+import courierIcon from '../images/courier.png';
+import './ShippingAndReturn.css';
+import '../App.css';
 
-export default function ShippingAndReturn(){
-    return(
+export default function ShippingAndReturn() {
+    return (
         <div className="shippingBody">
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div className='image-container'>
-        <img src={image7} alt='Glow' className='full-width-image'></img>
-      </div>
-      <h1>Shipping Policy</h1>
-      <ul>
-        <li>Delivery Charges are Rs. 200</li>
-        <li>In case of product unavailability, Glow Quester beauty team will inform the customer accordingly.</li>
-        <li>An order will processed with 24 hours on weekdays.</li>
-        <li>Any opened product shall not be returned.</li>
-        <li>Orders will reach customers within 3-5 business days</li>
-        <li>HERbeauty team has the discretion to cancel any order.</li>
-        <li>Online orders will only be exchanged through the ecommerce channel and not physically at any store. Please refer to our exchange and return policy</li>
-        <li>Gifts with purchase cannot be claimed on the same address more than once</li>
-      </ul>
-      <br></br>
-      <h1>Return Policy</h1>
-      <ul>
-        <li>Product will be exchanged within 7 days of purchase incase of any damage; used products may not be replaced.</li>
-        <li>Original receipt must be attached</li>
-        <li>Product must be in original packing</li>
-        <li>If customer has received what they ordered, delivery charges will be borne by customer</li>
-        <li>Products purchased online can only be exchanged online</li>
-        <li>Product must be evaluated by the QA team before making an exchange</li>
-        <li>The time period for an exchange request can be 5 – 7 business day</li>
-        <li>In-case of stock out, customer has to wait till the arrival of the stock, and upon agreement we can provide online store credit</li>
-        <li>We reserve the right to reject the exchange or return requests based on the conditions</li>
-      </ul>
-      <br>
-      </br>
-      <br></br>
-      <Footer/>
-      </div>
+            <Navbar />
+            <br /><br /><br /><br /><br />
+            <div className="shipping-info-container">
+                <h1>Shipping Information</h1>
+                <p className="shipping-note">
+                    Note: Delivery times may vary depending on the destination, customs processing, and unforeseen circumstances. Customs fees, import duties, and taxes are the responsibility of the recipient.
+                </p>
 
+                <div className="shipping-content">
+                    {/* Left Section: Shipping Options */}
+                    <div className="shipping-options">
+                        <div className="option">
+                            <img src={standardIcon} alt="Standard International Shipping" />
+                            <h3>Standard International Shipping</h3>
+                            <p>7-14 business days</p>
+                        </div>
+                        <div className="option">
+                            <img src={expressIcon} alt="Express International Shipping" />
+                            <h3>Express International Shipping</h3>
+                            <p>3-7 business days</p>
+                        </div>
+                        <div className="option">
+                            <img src={courierIcon} alt="Courier Service" />
+                            <h3>Courier Service</h3>
+                            <p>5-10 business days</p>
+                        </div>
+                    </div>
+
+                    {/* Right Section: FAQ */}
+                    <div className="shipping-faq">
+                        <h2>Shipping times may vary depending on your location and the shipping method selected. 
+                          Please note that delivery times are estimated and may be subject to delays beyond our control."</h2>
+                        <h2>Customers are responsible for any additional customs charges. Delivery times for international 
+                          orders may vary from 10-21 business days."</h2>
+                        <h2>Orders placed before 12:00 PM are typically processed the same day. Orders placed after 12:00 PM or on weekends 
+                          and holidays will be processed on the next business day</h2>
+                        <h2>We accept returns within 30 days of purchase, provided the items 
+                          are unused and in their original packaging.</h2>
+                        <h2>If your return is approved, your refund will be processed, and a credit will automatically be applied to your 
+                          original method of payment within a certain amount of days.</h2>
+                        <h2>We are not responsible for items lost, stolen, or damaged in transit. If you encounter an issue with your order, 
+                          please contact us so we can help you file a claim</h2>
+                        <h2>We offer free standard shipping on orders over $50 . 
+                          Please select the 'Free Shipping' option at checkout if your order qualifies</h2>
+                    </div>
+                </div>
+            </div>
+            <Footer />
+        </div>
     );
 }
