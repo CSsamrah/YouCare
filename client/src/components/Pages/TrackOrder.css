@@ -14,7 +14,7 @@
     margin: 30px 30px;
     padding: 30px;
     padding-left: 30px;
-    min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
+    min-height: 100vh; 
     box-sizing: border-box;
   }
 .body p{
@@ -28,4 +28,19 @@
     align-items: center;
     transition: 0.3s;
 
+}
+
+.input-container button {
+  background-color: #9b348c;
+  color: #fff; 
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.input-container button:hover {
+  background-color: #872278; 
+  color: #fff; 
 }

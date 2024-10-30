@@ -1,11 +1,11 @@
-/* Container and General Styling */
+
 .shippingBody {
     background-color: #ddabcf;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding: 0;
-    min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
+    min-height: 100vh; 
     box-sizing: border-box;
     width: 100%;
     
@@ -34,10 +34,10 @@
     flex-wrap: wrap;
 }
 
-/* Left Section: Shipping Options */
+
 .shipping-options {
     flex: 1;
-    background-color: #e9f1fab7;
+    background-color: #87227823;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -68,10 +68,9 @@
     color: #555;
 }
 
-/* Right Section: FAQ */
 .shipping-faq {
     flex: 2;
-    background-color: #e9f1fab7;
+    background-color: #87227823;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -93,7 +92,6 @@
     line-height: 1.4;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .shipping-content {
         flex-direction: column;

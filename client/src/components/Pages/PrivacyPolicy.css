@@ -14,7 +14,7 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 0;
-    min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
+    min-height: 100vh; 
     box-sizing: border-box;
     width: 100%;
   }
@@ -24,9 +24,9 @@
     box-sizing: border-box;
 }
  .Faqsbody ul, li {
-    text-align: left; /* Align headers and lists to the left if desired */
+    text-align: left; 
     margin: 0 auto;
-    width: 60vw; /* Adjust the max-width as per your design */
+    width: 60vw; 
   }
   
   .Faqsbody h1 {

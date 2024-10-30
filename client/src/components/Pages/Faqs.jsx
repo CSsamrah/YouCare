@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Faqs.css'
 import image6 from '../images/Faqs.png';
 import Footer from '../FooterEnd/FooterEnd';
 
 export default function Faqs() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <div className="Faqsbody">
             <br />

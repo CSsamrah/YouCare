@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+
+import React, {useEffect, useState} from 'react';
 import './TrackOrder.css';
 import Footer from '../FooterEnd/FooterEnd';
 import image3 from '../images/Glow quester (1).png';
 
 export default function TrackOrder() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [trackingNumber, setTrackingNumber] = useState('');
   const [trackingResult, setTrackingResult] = useState('');
   const [loading, setLoading] = useState(false);
 
   const doTrack = () => {
+
     if (trackingNumber.trim() === '') {
       alert('Please enter your tracking number.');
       return;
@@ -18,7 +23,7 @@ export default function TrackOrder() {
     setTimeout(() => {
       setTrackingResult(`Tracking result for ${trackingNumber}`);
       setLoading(false);
-    }, 1500); // Simulate tracking delay
+    }, 1500); 
   };
 
   return (
@@ -37,7 +42,7 @@ export default function TrackOrder() {
         <h1>Track Your Order</h1>
         <p className='instructions'>
           Enter your tracking number below to get the latest update on your order. 
-          If you experience issues, reach out to us at <a href="mailto:support@yourstorename.com">support@yourstorename.com</a>.
+          If you experience issues, reach out to us at <a href="mailto:support@youcare.com">support@youcare.com</a>.
         </p>
         
         <div className='input-container'>
@@ -55,7 +60,9 @@ export default function TrackOrder() {
         </div>
         
         <div className='tracking-result'>
-          {trackingResult && <p>{trackingResult}</p>}
+          {trackingResult && <p><strong>{trackingResult}</strong></p>}
+          <br></br>
+          <br></br>
         </div>
       </div>
       
