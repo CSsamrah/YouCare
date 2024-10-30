@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import about_image from '../images/pint2.png';
 import about_image2 from '../images/pint1.png';
@@ -18,6 +19,22 @@ import './AboutUs.css'
 import Footer from '../FooterEnd/FooterEnd'
 >>>>>>> 7759219 (Footer Changes)
 
+=======
+import React, { useEffect } from "react";
+import about_image from '../images/pint2.png';
+import about_image2 from '../images/pint1.png';
+import './AboutUs.css';
+import Footer from '../FooterEnd/FooterEnd';
+
+export default function AboutUs() {
+
+  // Scroll to the top on component load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+// export default function AboutUs(){
+>>>>>>> ebdd648 (Footer Changes)
     return(
         <div className="AboutusBody">
 <br></br>
@@ -27,6 +44,7 @@ import Footer from '../FooterEnd/FooterEnd'
         <br></br>
         <h1>About YouCare</h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <p><strong>YouCare</strong> is a personalized skincare platform offering tailored product recommendations through an interactive quiz. It features secure user accounts, a product catalog, cart management, and order tracking. With an easy-to-use interface, 
             YouCare ensures a smooth skincare shopping experience.YouCare is an innovative, personalized skincare platform that empowers users to find products specifically suited to their unique skin needs. Through an interactive and insightful quiz, YouCare analyzes individual skin types, concerns, and goals to recommend curated skincare products.
              The platform provides:</p>
@@ -34,11 +52,17 @@ import Footer from '../FooterEnd/FooterEnd'
         <p>YOU CARE is a personalized skincare platform offering tailored product recommendations through an interactive quiz. It features secure user accounts, a product catalog, cart management, and order tracking. With an easy-to-use interface, 
             YOU CARE ensures a smooth skincare shopping experience.</p>
 >>>>>>> 7759219 (Footer Changes)
+=======
+        <p><strong>YouCare</strong> is a personalized skincare platform offering tailored product recommendations through an interactive quiz. It features secure user accounts, a product catalog, cart management, and order tracking. With an easy-to-use interface, 
+            YouCare ensures a smooth skincare shopping experience.YouCare is an innovative, personalized skincare platform that empowers users to find products specifically suited to their unique skin needs. Through an interactive and insightful quiz, YouCare analyzes individual skin types, concerns, and goals to recommend curated skincare products.
+             The platform provides:</p>
+>>>>>>> ebdd648 (Footer Changes)
         <br></br>
         <div className='image-container'>
         <img src={about_image} alt='Glow' className='full-width-image'></img>
         <article>
           <h2>At YouCare</h2>
+<<<<<<< HEAD
 <<<<<<< HEAD
           <p>At <b>YouCare</b>, we offer a curated selection of premium cosmetics that cater to all your beauty needs.
           Our products are crafted with the highest quality ingredients to ensure effectiveness and purity. Each item is designed to enhance your natural beauty and provide a touch of elegance to your daily routine. Experience the difference with YouCare, 
@@ -46,6 +70,10 @@ import Footer from '../FooterEnd/FooterEnd'
           <p>At <b>You Care</b>, we offer a curated selection of premium cosmetics that cater to all your beauty needs.
           Our products are crafted with the highest quality ingredients to ensure effectiveness and purity. From luxurious skincare to vibrant makeup, each item is designed to enhance your natural beauty and provide a touch of elegance to your daily routine. Experience the difference with Radiant Glow, 
 >>>>>>> 7759219 (Footer Changes)
+=======
+          <p>At <b>YouCare</b>, we offer a curated selection of premium cosmetics that cater to all your beauty needs.
+          Our products are crafted with the highest quality ingredients to ensure effectiveness and purity. Each item is designed to enhance your natural beauty and provide a touch of elegance to your daily routine. Experience the difference with YouCare, 
+>>>>>>> ebdd648 (Footer Changes)
           where every product is a step toward a more radiant you.</p>
         </article>
       </div>
@@ -81,6 +109,9 @@ import Footer from '../FooterEnd/FooterEnd'
         <h1>Meet The Team</h1>
 =======
 >>>>>>> 7759219 (Footer Changes)
+      </div>
+      <div className="team-container">
+        <h1>Meet The Team</h1>
       </div>
            <Footer/>
         </div>

@@ -15,10 +15,14 @@
     padding: 30px;
     padding-left: 30px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     min-height: 100vh; 
 =======
     min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
 >>>>>>> 7759219 (Footer Changes)
+=======
+    min-height: 100vh; 
+>>>>>>> ebdd648 (Footer Changes)
     box-sizing: border-box;
   }
 .body p{

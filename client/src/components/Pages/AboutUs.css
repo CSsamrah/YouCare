@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /* AboutUs.css */
 >>>>>>> 7759219 (Footer Changes)
+=======
+>>>>>>> ebdd648 (Footer Changes)
 
 .AboutusBody {
   background-color: #ddabcf;
@@ -10,15 +13,20 @@
   margin: 0 auto;
   padding: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   min-height: 100vh; 
 =======
   min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
 >>>>>>> 7759219 (Footer Changes)
+=======
+  min-height: 100vh; 
+>>>>>>> ebdd648 (Footer Changes)
   box-sizing: border-box;
   width: 100%;
     
   }
   .AboutusBody h1  {
+<<<<<<< HEAD
 <<<<<<< HEAD
     text-align: center; 
     margin: 0px auto; 
@@ -40,6 +48,17 @@
     margin: 0 auto; /* Center the text block horizontally */
     max-width: 90%; /* Optional: Limit the width for better readability */
 >>>>>>> 7759219 (Footer Changes)
+=======
+    text-align: center; 
+    margin: 0px auto; 
+    max-width: 90%; 
+}
+.AboutusBody p{
+    font-size: 20px;
+    text-align: justify; 
+    margin: 0 auto; 
+    max-width: 90%; 
+>>>>>>> ebdd648 (Footer Changes)
 }
 
   
@@ -51,11 +70,17 @@
     margin: 20px 0;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .image-container, .image-container2 h2{
     margin: 10px 20px;
   }
 =======
 >>>>>>> 7759219 (Footer Changes)
+=======
+  .image-container, .image-container2 h2{
+    margin: 10px 20px;
+  }
+>>>>>>> ebdd648 (Footer Changes)
 
   
   .full-width-image {
@@ -70,6 +95,7 @@
     margin-top: 20px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 .box-container {
     display: flex;
@@ -81,15 +107,22 @@
 
 =======
   /* Container styling */
+=======
+
+>>>>>>> ebdd648 (Footer Changes)
 .box-container {
     display: flex;
-    flex-direction: column; /* Stack vertically by default */
+    flex-direction: column; 
     gap: 20px;
-    margin: 20px;
+    margin: 20px ;
 }
 
+<<<<<<< HEAD
 /* Box styling */
 >>>>>>> 7759219 (Footer Changes)
+=======
+
+>>>>>>> ebdd648 (Footer Changes)
 .box {
     background-color: #f4f4f469;
     padding: 20px;
@@ -99,6 +132,7 @@
 }
 .box h3{
     font-size: 30px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 }
@@ -113,18 +147,26 @@
         flex: 1;
         margin: 0 10px; 
 =======
+=======
+
+>>>>>>> ebdd648 (Footer Changes)
 }
-/* Responsive layout for larger screens */
+
 @media (min-width: 768px) {
     .box-container {
-        flex-direction: row; /* Arrange boxes in a row */
-        justify-content: space-between; /* Add space between the boxes */
+        flex-direction: row; 
+        justify-content: space-between; 
     }
 
     .box {
+<<<<<<< HEAD
         flex: 1; /* Allow each box to take up equal space */
         margin: 0 10px; /* Margin between boxes */
 >>>>>>> 7759219 (Footer Changes)
+=======
+        flex: 1;
+        margin: 0 10px; 
+>>>>>>> ebdd648 (Footer Changes)
     }
 }
 
@@ -132,10 +174,14 @@
   @media (min-width: 800px) {
     .image-container {
 <<<<<<< HEAD
+<<<<<<< HEAD
       flex-direction: row; 
 =======
       flex-direction: row; /* Side-by-side layout on larger screens */
 >>>>>>> 7759219 (Footer Changes)
+=======
+      flex-direction: row; 
+>>>>>>> ebdd648 (Footer Changes)
       align-items: center;
       justify-content: left;
       gap: 20px;
@@ -143,16 +189,21 @@
     }
     .image-container2 {
 <<<<<<< HEAD
+<<<<<<< HEAD
         flex-direction: row-reverse; 
 =======
         flex-direction: row-reverse; /* Image on right, text on left */
 >>>>>>> 7759219 (Footer Changes)
+=======
+        flex-direction: row-reverse; 
+>>>>>>> ebdd648 (Footer Changes)
         align-items: center;
         justify-content: center;
         gap: 40px;
       }
 
     .full-width-image {
+<<<<<<< HEAD
 <<<<<<< HEAD
       order: 1; 
       margin-right: 20px; 
@@ -168,6 +219,14 @@
     .image-container article, .image-container2 article {
       order: 2; /* Text on the right */
 >>>>>>> 7759219 (Footer Changes)
+=======
+      order: 1; 
+      margin-right: 20px; 
+    }
+  
+    .image-container article, .image-container2 article {
+      order: 2; 
+>>>>>>> ebdd648 (Footer Changes)
       margin-top: 0;
       text-align: left;
     }

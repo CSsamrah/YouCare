@@ -1,9 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import React, {useEffect, useState} from 'react';
 =======
 import React, { useState } from 'react';
 >>>>>>> 7759219 (Footer Changes)
+=======
+
+import React, {useEffect, useState} from 'react';
+>>>>>>> ebdd648 (Footer Changes)
 import './TrackOrder.css';
 import Footer from '../FooterEnd/FooterEnd';
 import image3 from '../images/Glow quester (1).png';
@@ -28,10 +33,14 @@ export default function TrackOrder() {
       setTrackingResult(`Tracking result for ${trackingNumber}`);
       setLoading(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
     }, 1500); 
 =======
     }, 1500); // Simulate tracking delay
 >>>>>>> 7759219 (Footer Changes)
+=======
+    }, 1500); 
+>>>>>>> ebdd648 (Footer Changes)
   };
 
   return (
@@ -51,10 +60,14 @@ export default function TrackOrder() {
         <p className='instructions'>
           Enter your tracking number below to get the latest update on your order. 
 <<<<<<< HEAD
+<<<<<<< HEAD
           If you experience issues, reach out to us at <a href="mailto:support@youcare.com">support@youcare.com</a>.
 =======
           If you experience issues, reach out to us at <a href="mailto:support@yourstorename.com">support@yourstorename.com</a>.
 >>>>>>> 7759219 (Footer Changes)
+=======
+          If you experience issues, reach out to us at <a href="mailto:support@youcare.com">support@youcare.com</a>.
+>>>>>>> ebdd648 (Footer Changes)
         </p>
         
         <div className='input-container'>
@@ -73,12 +86,18 @@ export default function TrackOrder() {
         
         <div className='tracking-result'>
 <<<<<<< HEAD
+<<<<<<< HEAD
           {trackingResult && <p><strong>{trackingResult}</strong></p>}
           <br></br>
           <br></br>
 =======
           {trackingResult && <p>{trackingResult}</p>}
 >>>>>>> 7759219 (Footer Changes)
+=======
+          {trackingResult && <p><strong>{trackingResult}</strong></p>}
+          <br></br>
+          <br></br>
+>>>>>>> ebdd648 (Footer Changes)
         </div>
       </div>
       
