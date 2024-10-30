@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Faqs.css'
 import image3 from '../images/Glow quester (1).png'
 import Footer from '../FooterEnd/FooterEnd'
 
 export default function TermsOfService() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='Faqsbody'>
         <br></br>

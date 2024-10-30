@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import image4 from '../images/Contact.png';
 import Footer from '../FooterEnd/FooterEnd';
 import './ContactPage.css';
 
 export default function ContactPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const [feedbackReceived, setFeedbackReceived] = useState(false);
 
     const handleSubmit = (e) => {

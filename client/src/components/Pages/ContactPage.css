@@ -1,4 +1,3 @@
-/* ContactPage.css */
 
 .contact-body {
     background-color: #ddabcf;
@@ -6,7 +5,7 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 0;
-    min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
+    min-height: 100vh; 
     box-sizing: border-box;
     width: 100%;
 }
@@ -23,7 +22,7 @@
 
 .contact-info {
     text-align: left;
-    color: #0033a0;
+    color: #872278;
     font-family: Arial, sans-serif;
 }
 
@@ -55,7 +54,7 @@
 
 .contact-form button {
     padding: 12px;
-    background-color: #0033a0;
+    background-color: #9b348c;
     color: white;
     font-weight: bold;
     border: none;
@@ -64,10 +63,9 @@
 }
 
 .contact-form button:hover {
-    background-color: #002080;
+    background-color: #872278;
 }
 
-/* Responsive layout */
 @media (min-width: 768px) {
     .contact-container {
         flex-direction: row;
@@ -86,7 +84,6 @@
     }
 }
 
-/* Feedback message styling */
 .feedback-message {
     color: #4CAF50;
     margin-top: 20px;

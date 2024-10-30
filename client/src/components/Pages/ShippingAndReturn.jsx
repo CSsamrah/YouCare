@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from '../Navbar/Navbar';
 import Footer from '../FooterEnd/FooterEnd';
 import standardIcon from '../images/standard.png';
@@ -8,6 +8,9 @@ import './ShippingAndReturn.css';
 import '../App.css';
 
 export default function ShippingAndReturn() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
     return (
         <div className="shippingBody">
             <Navbar />
@@ -19,7 +22,7 @@ export default function ShippingAndReturn() {
                 </p>
 
                 <div className="shipping-content">
-                    {/* Left Section: Shipping Options */}
+                    
                     <div className="shipping-options">
                         <div className="option">
                             <img src={standardIcon} alt="Standard International Shipping" />
@@ -38,7 +41,7 @@ export default function ShippingAndReturn() {
                         </div>
                     </div>
 
-                    {/* Right Section: FAQ */}
+                   
                     <div className="shipping-faq">
                         <h2>Shipping times may vary depending on your location and the shipping method selected. 
                           Please note that delivery times are estimated and may be subject to delays beyond our control."</h2>

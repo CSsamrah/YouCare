@@ -1,15 +1,17 @@
 import React from "react";
+import karachi from '../images/karachi.png'
 import Footer from '../FooterEnd/FooterEnd'
 
 export default function Location() {
     return(
-       <div className="body">
+       <div className="location-body">
         <br></br>
         <br></br>
         <br></br>
         <br></br>
         <br></br>
         <br></br>
+        <img src={karachi} alt=""/>
         <br></br>
         <br></br>
         <br></br>
