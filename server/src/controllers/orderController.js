@@ -22,8 +22,7 @@ const getOrderDetails= async (req, res) => {
       res.json(result.rows);
     } catch (error) {
       console.error('Error fetching order details:', error);
-      res.status(500).send('Internal Server Error');
-    }
+      res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
   };
 
 // get particular order detail
@@ -58,8 +57,7 @@ const getParticularOrder= async (req, res) => {
       }
     } catch (error) {
       console.error('Error fetching order details:', error);
-      res.status(500).send('Internal Server Error');
-    }
+      res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
   };  
 
  const checkoutInfo= async (req, res) => {
@@ -75,7 +73,7 @@ const getParticularOrder= async (req, res) => {
     } = req.body;
 
     if (!username || !phoneno || !products || !total_amount || !email || !address || !city || !zip_code) {
-        return res.status(400).json({ error: 'All fields are required' });
+        return res.status(400).json({ error: 'All fields are required', details: error.message });
     }
 
     try {

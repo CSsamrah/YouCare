@@ -43,7 +43,7 @@ const OrderSummary = () => {
         };
 
         try {
-            const response = await fetch('https://glowquester-backend.vercel.app/skincare/checkout', {
+            const response = await fetch('http://localhost:5000/skincare/checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

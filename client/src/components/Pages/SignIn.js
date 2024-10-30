@@ -13,7 +13,7 @@ const SignInPage = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('https://glowquester-backend.vercel.app/skincare/login', {
+      const response = await fetch('http://localhost:5000/skincare/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const SignInPage = () => {
       if (response.status === 200) {
         setSuccess(data);
         setError('');
-        navigate('/admin');
+        navigate('/');
       } else {
         setError(data);
         setSuccess('');

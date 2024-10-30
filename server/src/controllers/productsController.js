@@ -10,13 +10,12 @@ const addingProduct=async(req,res)=>{
         const addProduct = await pool.query('INSERT INTO product(product_id,product_name,description,price,picture,quantity,category_id,rating)values($1, $2, $3, $4, $5, $6, $7, $8)', [product_id, product_name, description, price, picture, quantity, category_id, rating])
         res.status(201).send('Product added successfully');
     } catch (error) {
-        console.error(error.message)
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 }
 // get product details
 const getProductDetails = async (req, res) => {
     const { product_id } = req.params;
-    console.log('Fetching product with ID:', req.params.product_id);
 
     try {
         const selectQuery = 'SELECT * FROM product WHERE product_id = $1';
@@ -31,7 +30,7 @@ const getProductDetails = async (req, res) => {
                     // If the picture is a hex string (like \\xffd8...), decode it first
                     const binaryData = Buffer.from(product.picture.slice(2), 'hex');
                     product.picture = `data:image/jpeg;base64,${binaryData.toString('base64')}`;
-                    console.log(product.picture)
+
                 } else {
                     // If it's already binary, convert directly
                     product.picture = `data:image/jpeg;base64,${Buffer.from(product.picture, 'binary').toString('base64')}`;
@@ -44,7 +43,7 @@ const getProductDetails = async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 };
 
@@ -61,8 +60,7 @@ const deleteProduct= async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 
 };
 
@@ -83,8 +81,7 @@ const editProductQuantity= async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
 // edit product price
@@ -104,8 +101,7 @@ const editProductPrice= async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
 // get all products
@@ -116,8 +112,7 @@ const getAllProducts= async (req, res) => {
         res.json(result.rows)
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
 
