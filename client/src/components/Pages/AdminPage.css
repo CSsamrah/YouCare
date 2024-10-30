@@ -113,7 +113,7 @@ input{
 .selected-shipment-details,.selected-order-details{
     line-height: 40px;
 }
-h4{
+.admin-container h4{
     font-size: 1.7em;
     font-weight: 700;
     font-family: 'Times New Roman', Times, serif;
