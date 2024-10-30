@@ -325,26 +325,26 @@ app.get('/orderDetails/:order_id', async (req, res) => {
 
         function generateShipmentAndDeliveryDates() {
             const currentDate = new Date();
-
+        
             const shipmentDate = new Date(currentDate);
             shipmentDate.setDate(shipmentDate.getDate() + 2);
-
+        
             const deliveryDate = new Date(currentDate);
             deliveryDate.setDate(deliveryDate.getDate() + 7);
-
+        
             const formatDate = (date) => {
                 const year = date.getFullYear();
-                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-based
                 const day = String(date.getDate()).padStart(2, '0');
-                return `${year}-${month}-${day}`;
+                return `${year}-${month}-${day}`; // Format: YYYY-MM-DD
             };
-
+        
             return {
                 shipment_date: formatDate(shipmentDate),
                 delivery_date: formatDate(deliveryDate)
             };
         }
-
+        
         const { shipment_date, delivery_date } = generateShipmentAndDeliveryDates();
 
         const shipmentQuery = `

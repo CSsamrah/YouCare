@@ -70,6 +70,7 @@ export default function ProductDetails() {
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
@@ -81,6 +82,10 @@ export default function ProductDetails() {
                     {products.map((product) => (
                         <tr key={product.product_id}>
                             <td>{product.product_id}</td>
+                            <td>
+                                {/* Image display */}
+                                <img src={product.picture} alt={product.product_name} style={{ width: '100px', height: 'auto' }} />
+                            </td>
                             <td>{product.product_name}</td>
                             <td>{product.description}</td>
                             <td>{product.price}</td>

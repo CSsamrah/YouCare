@@ -105,16 +105,33 @@ const editProductPrice= async (req, res) => {
 };
 
 // get all products
-const getAllProducts= async (req, res) => {
+const getAllProducts = async (req, res) => {
     try {
         const selectQuery = 'SELECT * FROM product';
         const result = await pool.query(selectQuery);
-        res.json(result.rows)
+        
+        // Iterate over each product and convert the picture to Base64
+        const productsWithImages = result.rows.map(product => {
+            if (product.picture) {
+                // Convert binary data or escaped string to Base64
+                if (typeof product.picture === 'string' && product.picture.startsWith('\\x')) {
+                    // If the picture is a hex string (like \\xffd8...), decode it first
+                    const binaryData = Buffer.from(product.picture.slice(2), 'hex');
+                    product.picture = `data:image/jpeg;base64,${binaryData.toString('base64')}`;
+                } else {
+                    // If it's already binary, convert directly
+                    product.picture = `data:image/jpeg;base64,${Buffer.from(product.picture, 'binary').toString('base64')}`;
+                }
+            }
+            return product; // Return the modified product
+        });
+
+        res.json(productsWithImages); // Send the modified array as the response
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
+    }
 };
-
 
 
 
