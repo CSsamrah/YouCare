@@ -28,7 +28,7 @@ export default function Description() {
             <div className='image-section'>
                 <img src={serum} alt=' '></img>
             </div>
-            <div className='image-section'>
+            {/* <div className='image-section'>
                 <img src={pink_foam} alt=' '></img>
             </div>
             <div className='text-section'>
@@ -45,7 +45,7 @@ export default function Description() {
             </div>
             <div className='text-section'>
                 <p>But we don't just stop at recommendations – we believe in full transparency. Dive into the details of each product to discover exactly what goes into them and how they can help your skin. From soothing botanicals to powerful antioxidants, our ingredients work harmoniously to nourish, protect, and rejuvenate your skin, leaving you glowing with confidence.</p>
-            </div>
+            </div> */}
 
         </div>
     )

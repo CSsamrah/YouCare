@@ -29,7 +29,9 @@ import {
 } from '@mui/icons-material';
 import { styled, alpha, createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import Cart from '../Pages/Cart';
+import Cart from '../Pages/CartContext';
+import logo from "../images/logo.png"
+import {useCart} from "../Pages/CartContext"
 
 // Assuming 'Cart' component is imported and defined somewhere in your project
 
@@ -88,6 +90,7 @@ LinkTab.propTypes = {
 
 function NavTabs() {
     const [value, setValue] = React.useState(0);
+    
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -263,7 +266,7 @@ export default function PrimarySearchAppBar() {
             </List>
         </Drawer>
     );
-
+    const {cartItems} = useCart();
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>
@@ -283,20 +286,18 @@ export default function PrimarySearchAppBar() {
                             <NavTabs />
                         </Box>
                         <Box sx={{ flexGrow: 1 }}>
-                            <Typography
-                                variant="h4"
-                                noWrap
-                                component="div"
-                                sx={{
-                                    display: 'flex',
-                                    fontWeight: '600',
-                                    color: 'white',
-                                    flexGrow: 1,
-                                    justifyContent: { xs: 'center', md: 'flex-start' },
-                                }}
-                            >
-                                Glow Quester
-                            </Typography>
+                        <Box
+        component="img"
+        src={logo} // Replace with your image path
+        alt="YouCare Logo"
+        sx={{
+            display: 'flex',
+            height: 100, 
+            width: 'auto',
+            justifyContent: { xs: 'center', md: 'flex-start' },
+            flexGrow: 1,
+        }}
+    />
                         </Box>
                         {/* <Search>
                             <SearchIconWrapper>
@@ -310,7 +311,7 @@ export default function PrimarySearchAppBar() {
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Link to="/cart" style={{ textDecoration: 'none' }}>
                                 <IconButton aria-label="cart">
-                                    <Badge badgeContent={4} color="secondary">
+                                    <Badge badgeContent={cartItems.length} color="secondary">
                                         <ShoppingCartIcon />
                                     </Badge>
                                 </IconButton>
