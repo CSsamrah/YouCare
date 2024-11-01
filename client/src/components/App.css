@@ -9,6 +9,29 @@ h1,h2,h3,h4,h5,h6{
   
 }
 
+.hero-btn{
+  background-color: transparent;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 50px;
+  /* color: purple; */
+  font-weight: 400;
+  border: 2px solid;
+}
+.home-btn{
+  color: white;
+  margin: 0;
+  padding: 13px 35px;
+  background:  rgb(155,52,140);
+  border-radius: 7px;
+  font-size: 15px;
+  border: 0;
+}
+.home-btn:hover{
+  color: white;
+  background-color: #872278;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -20,7 +43,6 @@ body, html {
   box-sizing: border-box;
   font-family:  sans-serif;
   overflow-x: hidden;
- 
 }
 
  .video-background-container {
@@ -49,6 +71,27 @@ body, html {
   color: white;
 }
 
+.hero-container{
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero-main-heading{
+  font-size: 5rem;
+  font-weight: 600;
+  background: -webkit-linear-gradient(#be118d, #f18797);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-sub-heading {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding: 2em 0px;
+  color: #3d3d3d;
+}
+
 .overlay h1 {
   font-size: 3rem;
 }
@@ -58,7 +101,7 @@ body, html {
   font-size: 1.3rem;
   border-radius: 10px;
   border: #562b15;
-  background-color:rgb(144, 35, 131);
+  background-color:#902383;
   color: white;
   cursor: pointer;
 }
@@ -72,22 +115,76 @@ body, html {
 } 
 
 .specialSection {
-  text-align: center;
-  background-color: rgb(250, 240, 240);
-  color: white;
-  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9b348c;
+/* background: linear-gradient(90deg, rgba(155,52,140,1) 55%, rgba(255,255,255,0.7988445378151261) 100%); */
+  padding: 30px 10px;
 }
-.specialSection span{
-  color:#da48c4;
-  font-style: italic;
+/*************************changes**********************/
+.section{
+  position: relative;
+  width: 100vw;
+  background-color: white;
+  
+}
+.specialSection .prop-container{
+  padding: 0 20px;
+  display: grid;
+  width: 100%;
+  list-style: none;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.specialSection .prop-container .prop-item{
+  display: flex;
+  align-items: center;
+}
+.specialSection .prop-container .prop-item img{
+  width: 90px;
+  height: 90px;
+}
+.specialSection .prop-container .prop-item .prop-title{
+  font-size: 1.15rem;
+  color: white;
 }
 
-.specialSection h2 {
-  font-family:serif;
-  font-size: 2.3em;
-  padding: 1.3em;
-  font-weight: 900;
+/********** quiz-section home ***************/
+.section-wrapper{
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  max-width: 1150px;
+  margin: auto;
+  
 }
+.section-wrapper .sub-section{
+  width: 50%;
+  /* border: 2px solid red; */
+  padding: 0 15px;
+}
+.section-wrapper .sub-section .section-title{
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+}
+.section-wrapper .sub-section .section-desc{
+  font-size: 1rem;
+  color: #4e4c4c;
+  margin-bottom: 30px;
+}
+.sub-section .quiz-section-img{
+  width: 100%;
+  height: 100%;
+  /* position: absolute;
+  max-width: 600px;
+  bottom: 0; */
+}
+/* quiz-section home */
+
+/********changes ********/
+
 
 .specialItem img {
   border-radius: 100px 100px 10px 10px;
@@ -119,10 +216,10 @@ body, html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, auto);
   gap: 10px;
-  padding: 20px;
-  max-width: 1300px;
+  padding: 3em 10%;
   margin: 0 auto;
-  background-color:rgb(250, 240, 240) ;
+  background: rgb(155,52,140);
+  background: linear-gradient(90deg, rgba(155,52,140,1) 55%, rgba(255,255,255,0.7988445378151261) 100%);
 }
 
 .text-section {
@@ -137,8 +234,6 @@ body, html {
   color: black;
   /* font-style: italic; */
   font-size: 1.3rem;
-
-
 }
 
 .image-section img {
@@ -152,29 +247,91 @@ body, html {
 .image-section {
   height: 300px;
 }
+/* *********************changes************************** */
+.main-heading{
+  font-size: 2.3rem;
+  padding-bottom: 10px;
+}
+.sub-heading{
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #6c6a6a;
+  color: #562b15;
+}
 
 .topPicks {
   background-color: rgb(250, 240, 240);
-  color: #8F5D46;
-  text-align: center;
-  line-height: 50px;
-  font-size: 1.5em;
-  padding-top: 2em;
+  padding: 0 10%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  /* border: 2px solid; */
+  
 }
+.topPicks .main-heading,.sub-heading{
+  text-align: center;
+}
+
 
 .top_items {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, auto);
-  gap: 70px 40px;
-  padding: 20px;
+  /* grid-template-rows: repeat(3, auto); */
+ 
+}
+.top_items .top_item{
+  width: 280px;
+}
+.top_items .top_item .top_image{
+  width: 100%;
+  min-height: 200px;
+}
+.top_items .top_item .top_item_details{
+  padding: 10px;
+}
+.top_items .top_item .top_item_details .top_item_title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.2em;
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+.top_items .top_item .top_item_details .top_item_desc{
+  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.top_items .top_item .top_item_details .top_item_desc .top_item_sold, i{
+  color: #6c6a6a;
+  font-size: 0.9em;
+}
+.top_items .top_item .top_item_details .top_item_desc .top_item_price span{
+  font-size: 1.17em;
+  font-weight: 600;
+}
+.top_items .top_item  .top_item_btn{
+  background-color: #9b348c;
+  margin: 6px 10px;
+  color: white;
 }
 
-.top_image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.topPicks > a{
+  text-decoration: none;
+  
+}
+
+.top_items_more{
+  text-align: right;
+  justify-self: flex-end;
+  color: #562b15;
+  padding: 20px 0;
+}
+.top_items_more:hover{
+  color: #9b348c;
 }
 
 .top_image {
@@ -182,16 +339,68 @@ body, html {
   height: 300px;
 }
 
+/* ********* Our Products ********** */
+.our-products-section{
+  padding: 4em 10%;
+  background-color: #ddabcf3a;
+}
+.our-products-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: around;
+  align-items: center;
+  padding: 3em 0;
+  gap: 15px;
+}
+.our-products-container .our-product{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c1449e3d;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+.our-products-container .our-product a{
+  text-decoration: none;
+  color: black;
+}
+.our-products-container .our-product img{
+  width: 280px;
+  height: 200px;
+  border-top-left-radius: 5px;
+ border-top-right-radius: 5px;
+ border-bottom: 1px solid #c1449e3d;
+ background-color: white;
+}
+.our-products-container .our-product .our-product-details{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px;
+ background-color: white;
+ border-bottom-left-radius: 5px;
+ border-bottom-right-radius: 5px;
+}
+.our-products-container .our-product .our-product-details .our-product-title{
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+/* ********* Our Products ********** */
+
+/* *********************changes************************** */
 
 .services-container {
-  text-align: center;
+  padding: 3em 10%;
+  /* text-align: center;
   padding: 20px 10px;
-  background-color: rgb(250, 240, 240);
+  background-color: rgb(250, 240, 240); */
 }
 
 .services-container h2,
 .services-container h1 {
-  margin: 2em;
+  /* margin: 2em; */
   font-size: 2em;
   text-align: center;
 }
@@ -200,6 +409,7 @@ body, html {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-top: 4em;
 }
 
 .service {
@@ -207,11 +417,11 @@ body, html {
   border-radius: 10px;
   padding: 20px;
   margin: 5px;
-  width: 350px;
+  width: 320px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   gap: 5px;
-
+  text-align: center;
 }
 
 .service h3 {
@@ -231,6 +441,14 @@ body, html {
   /* margin: 0 auto; */
 }
 
+.achievement-section{
+  padding: 3em 10%;
+  background:  rgb(250, 240, 240);
+}
+.achievement-section .main-heading{
+  text-align: center;
+}
+
 .achievements {
   display: flex;
   flex-direction: column;
@@ -240,6 +458,8 @@ body, html {
   font-size: 1em;
   font-weight: 700;
   padding-bottom: 5em;
+  width: 300px;
+  text-align: center;
 }
 
 .achievements span {
@@ -251,9 +471,9 @@ body, html {
 .achievement-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 4em;
 }
 
 .full {
@@ -306,20 +526,28 @@ body, html {
   gap: 2em;
  
   }
-  .specialItem img{
-    width: 100px;
-    height: 100px;
+  /* **********changes******** */
+  
+  .section-wrapper{
+    width: 90%;
+    align-items: center;
+   flex-direction: column; 
+   gap: 40px;
+   padding: 50px 0;
   }
-  .specialItem{
-    width: 120px;
-    font-size: 1em;
-    
-  }
-  .descriptionGrid {
-    gap: 10px;
-    padding: 10px;
+  .section-wrapper .sub-section{
+    width: 100%;
+    text-align: center;
   }
   
+  /* **********changes******** */
+
+  
+    .descriptionGrid {
+      gap: 10px;
+      padding: 10px;
+    }
+    
   .text-section {
     font-size: 1.1rem;
     padding: 3px 15px;
@@ -327,7 +555,7 @@ body, html {
   
   .image-section img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
   }
   .top_items{
@@ -381,13 +609,28 @@ body, html {
   .specialSection{
     height:125vh;
   }
-  .service img {
-    width: 25vw;
-    height: 8vh;
-  }
 }
 
 @media (max-width: 480px) {
+  /* ******** change************ */
+  .hero-container{
+    width: 80vw;
+  }
+  .hero-main-heading{
+    font-size: 3rem;
+  }
+  .hero-sub-heading {
+    font-size: 1.13rem;
+  }
+.specialSection .prop-container .prop-item{
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.section-wrapper .sub-section {
+  padding: 0;
+}
+/* ******** change************ */
 .descriptionGrid {
   padding: 5px;
 }
@@ -399,7 +642,7 @@ body, html {
 
 .image-section img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .top_items{
   gap: 0px 20px;

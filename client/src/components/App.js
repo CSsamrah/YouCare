@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './Navbar/Navbar';
 import { Box } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import MainVideo from './MainVideo/MainVideo';
+import MainVideo from './home/MainVideo';
 import Properties from './Properties';
 import Description from './Description';
 import TopPicks from './TopPicks';
@@ -31,6 +31,7 @@ import OrderSummary from './Pages/OrderSummary';
 import SignUpPage from './Pages/SignUpPage';
 import SignInPage from './Pages/SignIn';
 import ProductDetail from'./ProductDetail'
+import Home from './Pages/Home';
 
 function App() {
   const location = useLocation();
@@ -42,7 +43,7 @@ function App() {
         {!isAdminPage && <Navbar className="navbar" />}
         <div className="content">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<Home />} />
             <Route path="/skintest" element={<QuizPage />} />
             <Route path="/skincare/cleansers" element={<Cleansers />} />
             <Route path="/skincare/moisturizers" element={<Moisturizers />} />
@@ -71,26 +72,6 @@ function App() {
   );
 }
 
-const HomePage = () => (
-  <>
-    <MainVideo />
-    <Box>
-      <Properties />
-    </Box>
-    <Box>
-      <Description />
-    </Box>
-    <Box>
-      <TopPicks />
-    </Box>
-    <Box>
-      <Services />
-    </Box>
-    <Box>
-      <Footer />
-    </Box>
-  </>
-);
 
 const QuizPage = () => <Quiz />;
 
