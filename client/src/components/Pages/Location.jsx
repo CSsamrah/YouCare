@@ -5,7 +5,6 @@ import contactUs from '../images/contactUs.jpeg';
 
 export default function Location() {
     return(
-<<<<<<< HEAD
        <div className="body">
         <img src={contactUs} style={{marginTop:'70px', marginBottom:'100px',width:'100%', height:'250px'}}></img>
 
@@ -44,26 +43,6 @@ export default function Location() {
 
 
         {/* <div id="map" style={{height: '400px', width: '100%', backgroundColor:'white'}}></div> */}
-=======
-       <div className="location-body">
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <img src={karachi} alt=""/>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <h1>Address</h1>
-        <h2>XXX,123, Karachi Pakistan.</h2>
-        <br></br>
-        <br></br>
-        <br></br>
->>>>>>> ebdd648 (Footer Changes)
 
         <Footer/>
        </div>
