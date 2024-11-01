@@ -5,7 +5,7 @@ import contactUs from '../images/contactUs.jpeg';
 
 export default function Location() {
     return(
-       <div className="body">
+       <div className="location-body">
         <img src={contactUs} style={{marginTop:'70px', marginBottom:'100px',width:'100%', height:'250px'}}></img>
 
         <div className="info_boxes" style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
