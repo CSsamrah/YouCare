@@ -1,26 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/* Container and General Styling */
->>>>>>> 7759219 (Footer Changes)
-=======
-
->>>>>>> ebdd648 (Footer Changes)
 .shippingBody {
     background-color: #ddabcf;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
     min-height: 100vh; 
-=======
-    min-height: 100vh; /* Ensures the background color covers the full height of the viewport */
->>>>>>> 7759219 (Footer Changes)
-=======
-    min-height: 100vh; 
->>>>>>> ebdd648 (Footer Changes)
     box-sizing: border-box;
     width: 100%;
     
@@ -49,24 +33,10 @@
     flex-wrap: wrap;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 .shipping-options {
     flex: 1;
     background-color: #87227823;
-=======
-/* Left Section: Shipping Options */
-.shipping-options {
-    flex: 1;
-    background-color: #e9f1fab7;
->>>>>>> 7759219 (Footer Changes)
-=======
-
-.shipping-options {
-    flex: 1;
-    background-color: #87227823;
->>>>>>> ebdd648 (Footer Changes)
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -97,22 +67,9 @@
     color: #555;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .shipping-faq {
     flex: 2;
     background-color: #87227823;
-=======
-/* Right Section: FAQ */
-.shipping-faq {
-    flex: 2;
-    background-color: #e9f1fab7;
->>>>>>> 7759219 (Footer Changes)
-=======
-.shipping-faq {
-    flex: 2;
-    background-color: #87227823;
->>>>>>> ebdd648 (Footer Changes)
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -134,13 +91,6 @@
     line-height: 1.4;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-/* Responsive Design */
->>>>>>> 7759219 (Footer Changes)
-=======
->>>>>>> ebdd648 (Footer Changes)
 @media (max-width: 768px) {
     .shipping-content {
         flex-direction: column;
