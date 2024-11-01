@@ -9,16 +9,19 @@ const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
   const navigate = useNavigate();
 
-  const removeCartItem = (title) => {
-    removeFromCart(title);
+  const handleQuantityIncrease = (title, currentQuantity) => {
+    updateQuantity(title, currentQuantity + 1);
   };
 
-  const handleQuantityChange = (title, quantity) => {
-    updateQuantity(title, quantity);
+  const handleQuantityDecrease = (title, currentQuantity) => {
+    if (currentQuantity > 1) {
+      updateQuantity(title, currentQuantity - 1);
+    } else {
+      removeFromCart(title);
+    }
   };
 
   const handleCheckout = () => {
-    // Navigate to checkout form page
     navigate('/checkout');
   };
 
@@ -31,50 +34,66 @@ const Cart = () => {
   return (
     <main>
       <div className="cart_page">
-        <div className="cart_header">
-          <div className="header_product">Product</div>
-          <div className="header_quantity">Quantity</div>
-          <div className="header_subtotal">Subtotal</div>
-        </div>
-        <div className="cart_info">
-          {cartItems.map((item) => (
-            <div className="cart_box" key={item.title}>
-              <div className="detail_box">
-                <div className="cart_product_title">{item.title}</div>
-                <div className="cart_product_price"><p>Rs.{item.price}</p></div>
-                <button
-                  className="cart_remove"
-                  onClick={() => removeCartItem(item.title)}
-                >
-                  <FontAwesomeIcon icon={faTrash} />
-                </button>
-                </div>
-                <div className='quantity_box'>
-                  <input
-                    type="number"
-                    min={1}
-                    value={item.quantity}
-                    className="cart_product_quantity"
-                    onChange={(e) =>
-                      handleQuantityChange(item.title, parseInt(e.target.value))
-                    }
-                  />
-              </div>
-              <div className="subtotal">
-                <div className="sub_price">
+      <h2>YOUR CART</h2>
+        <table className="cart_table">
+          <thead>
+            <tr>
+              <th></th> 
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {cartItems.map((item) => (
+              <tr key={item.title}>
+                <td>
+                  <img src={item.image} alt={item.title} className="cart_product_image" />
+                </td>
+                <td className="cart_product_detail">
+                  {item.title}
+                  <div className="cart_product_price">Rs.{item.price}</div>
+                </td>
+                <td>
+                  <div className="quantity_display">
+                    <button
+                      className="quantity_button"
+                      onClick={() => handleQuantityDecrease(item.title, item.quantity)}
+                    >
+                      -
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button
+                      className="quantity_button"
+                      onClick={() => handleQuantityIncrease(item.title, item.quantity)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </td>
+                <td>
                   Rs.{(parseFloat(item.price.replace('Rs.', '')) * item.quantity).toFixed(2)}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                </td>
+                <td>
+                  <button
+                    className="cart_remove"
+                    onClick={() => removeFromCart(item.title)}
+                  >
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         <div className="total_section">
           <div className="total_label">Total:</div>
           <div className="total_price">Rs.{calculateTotal()}</div>
         </div>
         <div className="checkout_section">
           <button className="checkout_button" onClick={handleCheckout}>
-            Checkout
+            <b>CHECKOUT</b>
           </button>
         </div>
       </div>
@@ -83,21 +102,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

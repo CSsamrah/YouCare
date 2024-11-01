@@ -9,8 +9,7 @@ const getCustomerInfo= async (req, res) => {
         res.json(result.rows)
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
 //  get registered customer information
@@ -21,8 +20,7 @@ const getRegisteredCustomer= async (req, res) => {
         res.json(result.rows);
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
  const getRegCustomerById=async (req, res) => {
@@ -37,24 +35,41 @@ const getRegisteredCustomer= async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
 // insert customer information(sign up)
-const signUp= async (req, res) => {
+const signUp = async (req, res) => {
     try {
         const { username, password, email, phoneno } = req.body;
+
+        if (!username || !password || !email || !phoneno) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
 
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        const addcustomer = await pool.query('INSERT INTO registration(username,password,email,phoneno)values($1, $2, $3, $4)', [username, hashedPassword, email, phoneno])
-        res.status(201).send(' registered customer added successfully');
+        const addcustomer = await pool.query(
+            'INSERT INTO registration(username, password, email, phoneno) VALUES($1, $2, $3, $4) RETURNING *',
+            [username, hashedPassword, email, phoneno]
+        );
+
+        if (addcustomer.rowCount === 0) {
+            return res.status(500).json({ error: 'Failed to add customer to the database' });
+        }
+
+        res.status(201).json({ message: 'Customer registered successfully' });
     } catch (error) {
-        console.error(error.message)
+        if (error.code === '23505') {  // PostgreSQL error code for unique constraint violation
+            res.status(409).json({ error: 'Email already exists' });
+        } else {
+            res.status(500).json({ error: 'Internal Server Error', details: error.message });
+            console.log(error.message)
+        }
     }
 };
+
 
 // sign in
 
@@ -83,8 +98,7 @@ const signUp= async (req, res) => {
         }
     } catch (error) {
         console.error(error.message);
-        res.status(500).send('Server error');
-    }
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });    }
 };
 
 

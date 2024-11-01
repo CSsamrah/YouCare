@@ -5,7 +5,7 @@ export default function ProductDetails() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('https://glowquester-backend.vercel.app/skincare/product');
+            const response = await fetch('http://localhost:5000/skincare/product');
             const data = await response.json();
             setProducts(data);
         } catch (error) {
@@ -15,7 +15,7 @@ export default function ProductDetails() {
 
     const deleteProduct = async (product_id) => {
         try {
-            const response = await fetch(`https://glowquester-backend.vercel.app/skincare/product/${product_id}`, {
+            const response = await fetch(`http://localhost:5000/skincare/product/${product_id}`, {
                 method: 'DELETE',
             });
             if (response.ok) {
@@ -28,7 +28,7 @@ export default function ProductDetails() {
 
     const editProductQuantity = async (product_id, quantity) => {
         try {
-            const response = await fetch(`https://glowquester-backend.vercel.app/skincare/product/${product_id}/quantity`, {
+            const response = await fetch(`http://localhost:5000/skincare/product/${product_id}/quantity`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export default function ProductDetails() {
 
     const editProductPrice = async (product_id, price) => {
         try {
-            const response = await fetch(`https://glowquester-backend.vercel.app/skincare/product/${product_id}/price`, {
+            const response = await fetch(`http://localhost:5000/skincare/product/${product_id}/price`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,6 +70,7 @@ export default function ProductDetails() {
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
@@ -81,6 +82,10 @@ export default function ProductDetails() {
                     {products.map((product) => (
                         <tr key={product.product_id}>
                             <td>{product.product_id}</td>
+                            <td>
+                                {/* Image display */}
+                                <img src={product.picture} alt={product.product_name} style={{ width: '100px', height: 'auto' }} />
+                            </td>
                             <td>{product.product_name}</td>
                             <td>{product.description}</td>
                             <td>{product.price}</td>

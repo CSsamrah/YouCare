@@ -10,7 +10,7 @@ const pool=require('../../db')
             res.json(result.rows)
         } catch (error) {
             console.error(error);
-            res.status(500).send('Internal Server Error');
+            res.status(500).json({ error: 'Internal Server Error', details: error.message });;
         }
 
     } catch (error) {
@@ -35,7 +35,7 @@ const pool=require('../../db')
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
     }
 };
 

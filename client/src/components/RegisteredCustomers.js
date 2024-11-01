@@ -5,6 +5,7 @@ const RegisteredCustomers = () => {
     const [customers, setCustomers] = useState([]);
     const [searchCustomerID, setSearchCustomerID] = useState('');
     const [selectedCustomer, setSelectedCustomer] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Fetch all customers
     useEffect(() => {
@@ -13,12 +14,11 @@ const RegisteredCustomers = () => {
 
     const fetchCustomers = async () => {
         try {
-            const response = await fetch('https://glowquester-backend.vercel.app/skincare/registered-customers');
+            const response = await fetch('http://localhost:5000/skincare/registered-customers');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log('Fetched customers:', data); // Debug log
             setCustomers(data);
         } catch (error) {
             console.error('Error fetching customers:', error);
@@ -28,20 +28,26 @@ const RegisteredCustomers = () => {
     // Fetch customer by customer_id
     const searchCustomer = async () => {
         try {
-            const response = await fetch(`https://glowquester-backend.vercel.app/skincare/registered-customers/${searchCustomerID}`);
+            const response = await fetch(`http://localhost:5000/skincare/registered-customers/${searchCustomerID}`);
             if (response.status === 404) {
                 setSelectedCustomer(null);
+                setIsModalOpen(false);
                 throw new Error('Customer not found');
             }
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log('Fetched customer:', data); // Debug log
             setSelectedCustomer(data);
+            setIsModalOpen(true); // Open the modal when a customer is selected
         } catch (error) {
             console.error('Error fetching customer:', error);
         }
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedCustomer(null);
     };
 
     return (
@@ -85,15 +91,18 @@ const RegisteredCustomers = () => {
                 </table>
             </div>
 
-            {/* Selected Customer Details */}
-            {selectedCustomer && (
-                <div className="selected-customer-details">
-                    <h4>Selected Customer Details</h4>
-                    <p>Customer ID: {selectedCustomer.user_id}</p>
-                    <p>Username: {selectedCustomer.username}</p>
-                    <p>Email: {selectedCustomer.email}</p>
-                    <p>Phone No: {selectedCustomer.phoneno}</p>
-                    <p>Address: {selectedCustomer.password}</p>
+            {/* Modal for Selected Customer Details */}
+            {isModalOpen && selectedCustomer && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <span className="close-button" onClick={closeModal}>&times;</span>
+                        <h4>Selected Customer Details</h4>
+                        <p><strong>Customer ID:</strong> {selectedCustomer.user_id}</p>
+                        <p><strong>Username:</strong> {selectedCustomer.username}</p>
+                        <p><strong>Email:</strong> {selectedCustomer.email}</p>
+                        <p><strong>Phone No:</strong> {selectedCustomer.phoneno}</p>
+                        <p><strong>Password:</strong> {selectedCustomer.password}</p>
+                    </div>
                 </div>
             )}
         </div>

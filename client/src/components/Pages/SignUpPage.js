@@ -15,7 +15,7 @@ const SignUpPage = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('https://glowquester-backend.vercel.app/skincare/sign-up', {
+      const response = await fetch('http://localhost:5000/skincare/sign-up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,11 +34,11 @@ const SignUpPage = () => {
         setError('');
         navigate('/sign-in'); // Redirect to sign-in page on success
       } else {
-        setError(data);
+        setError(data.error || 'Failed to sign up'); 
         setSuccess('');
       }
     } catch (error) {
-      setError(error.message);
+      setError(`Client error: ${error.message}`);
       setSuccess('');
     }
   };

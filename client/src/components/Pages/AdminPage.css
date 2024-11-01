@@ -23,8 +23,8 @@ h3.i_name {
     text-align: center;
 }
 
-button {
-    background-color: #4CAF50;
+.admin-container button {
+    background-color: #9b348c;
     color: white;
     padding: 12px 20px;
     margin: 10px;
@@ -35,8 +35,8 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #45a049;
+.admin-container button:hover {
+    background-color: #c06593;
 }
 
 /* Table Styles */
@@ -47,25 +47,25 @@ button:hover {
     margin: 20px 0;
 }
 
-table {
+.admin-container table {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px; /* Ensures table doesn't get too narrow on small screens */
 }
 
-th, td {
+.admin-container th, td {
     text-align: left;
     padding: 12px;
     border-bottom: 1px solid #ddd;
 }
 
-th {
+.admin-container th {
     background-color: #f4f4f4;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-tr:hover {
+.admin-container tr:hover {
     background-color: #f1f1f1;
 }
 
@@ -113,9 +113,50 @@ input{
 .selected-shipment-details,.selected-order-details{
     line-height: 40px;
 }
-h4{
-    font-size: 1.5em;
+.admin-container h4{
+    font-size: 1.7em;
     font-weight: 700;
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(19, 19, 208);
+    color: #a71886;
+    line-height: 1.4em;
+    text-decoration: underline;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #f1e0f0;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    overflow-wrap: break-word; /* Ensures text wraps within the modal */
+    word-wrap: break-word; /* Compatibility with older browsers */
+    word-break: break-word;
+    white-space: pre-wrap; /* Preserves line breaks */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.modal-overlay p{
+    font-size: 1.1em;
+    line-height: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }

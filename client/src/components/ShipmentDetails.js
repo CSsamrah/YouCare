@@ -5,6 +5,7 @@ const ShipmentDetails = () => {
     const [shipments, setShipments] = useState([]);
     const [searchShippingID, setSearchShippingID] = useState('');
     const [selectedShipment, setSelectedShipment] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
     // Fetch all shipments
     useEffect(() => {
@@ -13,7 +14,7 @@ const ShipmentDetails = () => {
 
     const fetchShipments = async () => {
         try {
-            const response = await fetch('https://glowquester-backend.vercel.app/skincare/shipment');
+            const response = await fetch('http://localhost:5000/skincare/shipment');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -27,7 +28,7 @@ const ShipmentDetails = () => {
     // Fetch shipment by shipping_id
     const searchShipment = async () => {
         try {
-            const response = await fetch(`https://glowquester-backend.vercel.app/skincare/shipment/${searchShippingID}`);
+            const response = await fetch(`http://localhost:5000/skincare/shipment/${searchShippingID}`);
             if (response.status === 404) {
                 setSelectedShipment(null);
                 throw new Error('Shipment not found');
@@ -37,9 +38,16 @@ const ShipmentDetails = () => {
             }
             const data = await response.json();
             setSelectedShipment(data);
+            setIsModalOpen(true); // Open the modal on shipment selection
         } catch (error) {
             console.error('Error fetching shipment:', error);
         }
+    };
+
+    // Close the modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedShipment(null);
     };
 
     return (
@@ -86,16 +94,19 @@ const ShipmentDetails = () => {
                 </table>
             </div>
 
-            {/* Selected Shipment Details */}
-            {selectedShipment && (
-                <div className="selected-shipment-details">
-                    <h4>Selected Shipment Details</h4>
-                    <p>Shipping ID: {selectedShipment.shipping_id}</p>
-                    <p>Order ID: {selectedShipment.order_id}</p>
-                    <p>Address: {selectedShipment.shipping_address}</p>
-                    <p>Shipping Date: {selectedShipment.shipment_date}</p>
-                    <p>Delivery Date: {selectedShipment.delivery_date}</p>
-                    <p>tracking_number: {selectedShipment.tracking_number}</p>  
+            {/* Modal for Selected Shipment Details */}
+            {isModalOpen && selectedShipment && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <span className="close-button" onClick={closeModal}>&times;</span>
+                        <h4>Selected Shipment Details</h4>
+                        <p><strong>Shipping ID:</strong> {selectedShipment.shipping_id}</p>
+                        <p><strong>Order ID:</strong> {selectedShipment.order_id}</p>
+                        <p><strong>Shipping Address:</strong> {selectedShipment.shipping_address}</p>
+                        <p><strong>Shipment Date:</strong> {selectedShipment.shipment_date}</p>
+                        <p><strong>Delivery Date:</strong> {selectedShipment.delivery_date}</p>
+                        <p><strong>Tracking Number:</strong> {selectedShipment.tracking_number}</p>
+                    </div>
                 </div>
             )}
         </div>

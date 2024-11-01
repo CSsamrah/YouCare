@@ -44,9 +44,11 @@
 }
 
 .view_full_cart_button {
-  background-color: rgb(180, 136, 169);
+  background-color: #9b348c;
 }
-
+.view_full_cart_button:hover{
+  background-color: #872278;
+}
 .sliding_cart_items {
   padding: 10px;
   flex-grow: 1; /* Ensure this section grows and takes available space */
