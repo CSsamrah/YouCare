@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import './Faqs.css';
+import './TermsAndServices.css';
 import image3 from '../images/Glow quester (1).png';
 import Footer from '../FooterEnd/FooterEnd';
 
