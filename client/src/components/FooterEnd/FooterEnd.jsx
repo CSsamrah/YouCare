@@ -44,10 +44,7 @@ export default function Footer() {
         <div className="contact-foot">
           <Button sx={{ color: 'black', fontWeight: '600' }}>Contact-Us</Button>
           <Link to='/contact-page'>
-          <Button sx={{ color: 'black' }}>www.GlowQuester.com</Button>
-          </Link>
-          <Link to="/track-order">
-          <Button sx={{ color: 'black' }}>Track Order</Button>
+          <Button sx={{ color: 'black' }}>www.YouCare.com</Button>
           </Link>
           <Link to='/sign-up'>
           <Button sx={{ color: 'black' }}>Sign In</Button>
