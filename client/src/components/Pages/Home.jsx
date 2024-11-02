@@ -15,23 +15,23 @@ const Home = () => {
     <>
     <MainVideo />
       <Properties />
-      <div className="section">
+      <div className="home-section">
     <QuizSection />
       </div>
-      <div className="section">
+      <div className="home-section">
       <TopPicks />
       </div>
    
-    <div className="section">
+    <div className="home-section">
       <Services />
     </div>
-    <div className="section">
+    <div className="home-section">
       <OurProducts />
     </div>
-    <div className="section">
+    <div className="home-section">
       <Description />
     </div>
-    <div className="section">
+    <div className="home-section">
       <Achievements />
     </div>
   

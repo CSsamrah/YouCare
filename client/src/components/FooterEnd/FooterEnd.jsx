@@ -10,7 +10,7 @@ export default function Footer() {
     <div className='end'> 
       <div className="full">
         <div className="foot">
-          <h2>Glow Quester</h2>
+          <h2>YouCare</h2>
           <div className='icons'>
             <InstagramIcon fontSize='large' />
             <FacebookIcon fontSize='large' />
