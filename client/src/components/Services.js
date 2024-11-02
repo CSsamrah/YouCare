@@ -9,7 +9,6 @@ export default function Services() {
   return (
     <div className="services-container">
       <h2 className='main-heading'>We Provide...</h2>
-      <h3 className='sub-heading'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit amet eius molestias minus.</h3>
       <div className="services">
         <div className="service">
           <img src={international} alt=''></img>
