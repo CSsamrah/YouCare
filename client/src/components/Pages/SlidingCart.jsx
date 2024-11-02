@@ -48,7 +48,7 @@ const SlidingCart = ({ isOpen, onClose, onViewFullCart }) => {
       </div>
       <div className="sliding_cart_footer">
         <button className="view_full_cart_button" onClick={onViewFullCart}>
-          View full cart
+          VIEW FULL CART
         </button>
       </div>
     </div>
